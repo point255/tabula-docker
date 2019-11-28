@@ -1,8 +1,10 @@
 FROM openjdk
 
-ENV TABULA_VERSION 1.1.1
+ENV TABULA_VERSION 1.2.1
 
-RUN wget -q https://github.com/tabulapdf/tabula/releases/download/v$TABULA_VERSION/tabula-jar-$TABULA_VERSION.zip && \
+RUN yum install -y wget unzip
+
+RUN wget https://github.com/tabulapdf/tabula/releases/download/v$TABULA_VERSION/tabula-jar-$TABULA_VERSION.zip && \
     unzip tabula-jar-$TABULA_VERSION.zip && \
     rm tabula-jar-$TABULA_VERSION.zip
 
